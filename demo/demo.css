@@ -1,0 +1,38 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.intro-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom:100px;
+}
+
+.intro-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+}
+
+.card-container {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+  
+.card-viewed {
+  background-color: green;
+}
