@@ -113,7 +113,7 @@ class Pointer {
       rootMargin: '0px',
       threshold: [0.0, 0.25, 0.50, 0.75, 1.0]
     }
-    return new window.IntersectionObserver(cb, settings)
+    return new IntersectionObserver(cb, settings)
   }
   getObserver () {
     return this.observer
@@ -136,7 +136,7 @@ class Pointer {
   }
   init () {
     const element = this.getElement()
-    if (element instanceof window.Element === false) {
+    if (element instanceof Element === false) {
       return
     }
     this.watchElement(element)

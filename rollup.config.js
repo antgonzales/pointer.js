@@ -1,7 +1,13 @@
+import resolve from 'rollup-plugin-node-resolve'
+
 export default {
   name: 'Pointer.js',
-  entry: 'src/Pointer.js',
-  dest: 'dist/umd/pointer.js',
-  format: 'umd',
-  external: [ 'intersection-observer' ]
+  input: 'src/Pointer.js',
+  output: {
+    file: 'dist/umd/pointer.js',
+    format: 'umd'
+  },
+  plugins: [
+    resolve()
+  ]
 }
