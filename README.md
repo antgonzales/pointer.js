@@ -1,5 +1,7 @@
 # pointer.js
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)[![Travis CI Build](https://travis-ci.org/antgonzales/pointer.js.svg?branch=master)](https://travis-ci.org/antgonzales/pointer.js)
+
+[![Travis CI Build](https://travis-ci.org/antgonzales/pointer.js.svg?branch=master)](https://travis-ci.org/antgonzales/pointer.js)[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 A waypoint library to find your place in the DOM.
 
 ## Installation
