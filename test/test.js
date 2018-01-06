@@ -38,16 +38,8 @@ test('returns the element', (assert) => {
 
 test('creates an observer', (assert) => {
   const pointer = new Pointer()
-  const mockCb = function () {}
-  const observer = pointer.createObserver(mockCb)
+  const observer = pointer.observer
   assert.is(observer.constructor.name, 'IntersectionObserver')
-})
-
-test('saves the observer on the instance', (assert) => {
-  const mockCreateObserver = function () { return true }
-  Pointer.prototype.creatObserver = mockCreateObserver
-  const pointer = new Pointer()
-  assert.truthy(pointer.observer)
 })
 
 test('observes the element', (assert) => {
@@ -62,7 +54,7 @@ test('observes the element', (assert) => {
   assert.true(spy.calledOnce)
 })
 
-test('watches the element on intestialization', (assert) => {
+test('watches the element on instantiation', (assert) => {
   sinon.spy(Pointer.prototype, 'watchElement')
   const el = createDomNodes('div', {name: 'class', value: 'js-waypoint'}, 1)[0]
   const pointer = new Pointer({element: el})
@@ -71,21 +63,19 @@ test('watches the element on intestialization', (assert) => {
 
 test('returns a function to run the callback on each observations entry', (assert) => {
   const spy = sinon.spy()
-  const pointer = new Pointer()
+  const pointer = new Pointer({handler: spy})
   const mockEntries = [1, 2, 3, 4, 5]
-  const handler = pointer.createHandler(spy)
-  handler(mockEntries)
+  pointer.callback(mockEntries)
   assert.is(spy.callCount, mockEntries.length)
 })
 
 test('passes class context to the handler', (assert) => {
-  const pointer = new Pointer()
-  const mockCb = function (entries) {
-    assert.is(pointer, this)
+  const handler = function () {
+    assert.is(this.constructor.name, 'Pointer')
   }
-  const handler = pointer.createHandler(mockCb)
+  const pointer = new Pointer({handler: handler})
   const mockEntries = [1]
-  handler(mockEntries)
+  pointer.callback(mockEntries)
 })
 
 test('disables watching an element', (assert) => {

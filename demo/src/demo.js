@@ -15,6 +15,9 @@ const handler = function (entry) {
 const waypoints = document.querySelectorAll('.js-waypoint')
 const activeWaypoints = []
 waypoints.forEach((waypoint) => {
-  const active = new Pointer({element: waypoint}, handler)
+  const active = new Pointer({
+    element: waypoint,
+    handler: handler
+  })
   activeWaypoints.push(active)
 })
