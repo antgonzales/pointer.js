@@ -1,6 +1,6 @@
 {
   "name": "pointer.js",
-  "version": "0.1.0-beta",
+  "version": "0.1.1-beta",
   "description": "A lightweight library to create checkpoints across a page.",
   "main": "dist/umd/pointer.js",
   "scripts": {
